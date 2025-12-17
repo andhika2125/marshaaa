@@ -1,4 +1,4 @@
-/* ANIMASI */
+/* ================= ANIMASI ================= */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -16,7 +16,7 @@
     100% { transform: translateY(0); }
 }
 
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     background: linear-gradient(135deg, #ffe6f0, #fff0f6);
@@ -24,7 +24,7 @@ body {
     animation: fadeIn 1s ease;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 header {
     background: linear-gradient(135deg, #ff9acb, #ffb6d9);
     color: white;
@@ -43,14 +43,14 @@ header p {
     font-weight: bold;
 }
 
-/* CONTAINER */
+/* ================= CONTAINER ================= */
 .container {
     width: 95%;
     max-width: 1100px;
     margin: auto;
 }
 
-/* BOX */
+/* ================= BOX ================= */
 .box {
     background: white;
     padding: 20px;
@@ -60,7 +60,7 @@ header p {
     animation: fadeIn 0.8s ease;
 }
 
-/* INPUT & BUTTON */
+/* ================= INPUT & BUTTON ================= */
 input, select, button {
     width: 100%;
     padding: 10px;
@@ -76,7 +76,7 @@ input:focus, select:focus {
     box-shadow: 0 0 5px rgba(255, 154, 203, 0.5);
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 button {
     background: #ff9acb;
     color: white;
@@ -91,12 +91,12 @@ button:hover {
     transform: scale(1.03);
 }
 
-/* LOGOUT BUTTON */
+/* ================= LOGOUT ================= */
 .logout {
     background: #ff6fae;
 }
 
-/* TABLE */
+/* ================= TABLE ================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -121,15 +121,51 @@ td {
     background: #fff5fa;
 }
 
-/* HIDDEN */
+/* ================= HIDDEN ================= */
 .hidden {
     display: none;
 }
 
-/* ICON LUCU */
+/* ================= ICON LUCU ================= */
 .cute-icon {
     font-size: 30px;
     animation: float 2s ease-in-out infinite;
     text-align: center;
     margin-bottom: 10px;
+}
+
+/* ================= BUBBLE BACKGROUND ================= */
+.bubble {
+    position: fixed;
+    bottom: -100px;
+    background: rgba(255, 182, 217, 0.5);
+    border-radius: 50%;
+    animation: bubbleUp 10s infinite ease-in;
+    z-index: -1;
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* ================= SPARKLE CLICK ================= */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.8);
+    }
 }
