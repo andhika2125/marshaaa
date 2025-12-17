@@ -1,7 +1,8 @@
+// ================= DATA =================
 let dataAbsensi = JSON.parse(localStorage.getItem("absensi")) || [];
 let user = localStorage.getItem("user");
 
-// LOGIN
+// ================= LOGIN =================
 function login() {
     const username = document.getElementById("username").value;
     if (!username) {
@@ -12,13 +13,13 @@ function login() {
     location.reload();
 }
 
-// LOGOUT
+// ================= LOGOUT =================
 function logout() {
     localStorage.removeItem("user");
     location.reload();
 }
 
-// TAMBAH DATA
+// ================= TAMBAH DATA =================
 function addData() {
     const no = document.getElementById("no").value;
     const nama = document.getElementById("nama").value;
@@ -35,6 +36,7 @@ function addData() {
     localStorage.setItem("absensi", JSON.stringify(dataAbsensi));
     renderTable();
 
+    // Reset form
     document.getElementById("no").value = "";
     document.getElementById("nama").value = "";
     document.getElementById("kelas").value = "";
@@ -42,7 +44,7 @@ function addData() {
     document.getElementById("nilai").value = "";
 }
 
-// TAMPILKAN TABEL
+// ================= TAMPILKAN TABEL =================
 function renderTable() {
     const tbody = document.getElementById("tableBody");
     tbody.innerHTML = "";
@@ -60,11 +62,29 @@ function renderTable() {
     });
 }
 
-// CEK LOGIN
+// ================= CEK LOGIN =================
 if (user) {
     document.getElementById("loginBox").classList.add("hidden");
     document.getElementById("absenBox").classList.remove("hidden");
     document.getElementById("welcome").innerText = "Login sebagai: " + user;
 }
 
+// ================= LOAD DATA =================
 renderTable();
+
+// ================= EFEK KLIK LUCU ✨ =================
+document.addEventListener("click", function (e) {
+    const sparkle = document.createElement("div");
+    sparkle.innerHTML = "✨";
+    sparkle.style.position = "fixed";
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+    sparkle.style.fontSize = "18px";
+    sparkle.style.pointerEvents = "none";
+    sparkle.style.animation = "fadeOut 0.8s ease-out";
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.remove();
+    }, 800);
+});
