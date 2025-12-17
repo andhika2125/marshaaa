@@ -7,6 +7,13 @@
 </head>
 <body>
 
+<!-- 🌸 BUBBLE ANIMASI BACKGROUND -->
+<div class="bubble" style="width:40px; height:40px; left:10%; animation-duration:8s;"></div>
+<div class="bubble" style="width:60px; height:60px; left:30%; animation-duration:12s;"></div>
+<div class="bubble" style="width:30px; height:30px; left:50%; animation-duration:10s;"></div>
+<div class="bubble" style="width:50px; height:50px; left:70%; animation-duration:14s;"></div>
+<div class="bubble" style="width:25px; height:25px; left:85%; animation-duration:9s;"></div>
+
 <header>
     <h1>Website Absensi Kelas</h1>
     <p id="welcome"></p>
@@ -45,4 +52,26 @@
         <button class="logout" onclick="logout()">Logout</button>
     </div>
 
-    <!--
+    <!-- TABEL -->
+    <div class="box">
+        <div class="cute-icon">📚✨</div>
+        <h2>Data Absensi</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Absen</th>
+                    <th>Nilai</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
